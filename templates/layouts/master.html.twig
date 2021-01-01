@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>
+        {%block titulo%}INICIO{% endblock %}-Master Symfony
+    </title>
+</head>
+<body>
+    <!--cabecera-->
+    <div id="header">
+        {% block cabecera%}
+            <h1>Cabecera de la plantilla</h1>
+        {% endblock%}
+        <hr/>
+    </div>
+
+    <section id="content">
+        {% block contenido %}
+            <p>Contenido por defecto</p>
+        {% endblock %}
+        <hr/>
+    </section>
+    
+    <footer>
+        Curro Azcarate
+    </footer>
+</body>
+</html>

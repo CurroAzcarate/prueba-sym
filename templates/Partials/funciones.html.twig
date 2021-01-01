@@ -1,0 +1,31 @@
+<h1>Funciones</h1>
+{#Funciones predefinidas#}
+    
+{{ min([2,4,5,6,98,1,0]) }}<br/>
+{{ max([2,4,5,6,98,1,0]) }}<br/>
+    
+{{ random(animales) }}<br/>
+    
+{% for i in range(0,100,5) %} 
+   {{ i }}<br/>
+{% endfor %}
+
+{#Filtros#}
+
+<h1>Filtros</h1>
+
+{{ animales|length }}<br/>
+
+{% set email='             Email@email.com         '%}
+{{ dump(email) }} {#Sale con espacios#}
+{{ dump(email|trim) }} {#quita  espacios#}
+{{ dump(email|trim|upper) }} {#todo a mayusculas#}
+{{ dump(email|trim|lower) }} {#todo a minusculas#}
+
+<h1>Extensiones personalizadas</h1>
+{{ multiplica(2)|raw}}
+
+{{ 12|multiplica|raw }}
+
+
+

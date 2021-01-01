@@ -1,0 +1,11 @@
+{
+    "name": "vendor/aprendiendo-symfony",
+    "description": "Description of project aprendiendo-symfony.",
+    "authors": [
+        {
+            "name": "curro",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {}
+}

@@ -1,0 +1,65 @@
+{% extends 'layouts/master.html.twig' %}
+
+
+{% block titulo %}
+    Animales
+{% endblock %}
+
+{% block cabecera %}
+    {{ parent() }}<!-- hereda--> 
+    <h2>{{ title }}</h2>
+{% endblock %}
+{% block contenido%}
+    {# esto es un comentario
+    <h1>{{ title }}</h1>
+    <h2>tu nombre es {{ nombre }}</h2>
+    <h2>tu apellido es {{ apellidos }}</h2>
+     cierre de comentario #}
+    
+    {#  Crear variable  #}
+    
+    {% set Perro='Pastor Aleman' %}
+    <h4>{{ Perro }}</h4>
+    
+    {#Trabajar con arrays#}
+    
+    {{ dump(animales) }}
+    
+    {{ animales[1] }}
+    {# Arrays asociativos #}
+    
+    {{ dump(aves) }}
+    {{ aves.tipo ~ '-'~ aves.raza}}
+    
+    {#Condicionales#}
+    {% if aves.tipo=='palomo' %}
+        <h1>Cuidado , un palomo</h1>
+    {% else %}
+            <h1>No es un  palomo</h1>
+    {% endif %}
+    
+    {#bucle#}
+    
+    {% if animales|length>=0 %}
+        <ul>
+        {% for animal in animales %}
+            <li>
+            {{ animal }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% for i in 0..animales|length %}
+        {{ i }}<br/>
+    {% endfor %}
+    
+    {% if aves.color starts with 'g' %}
+        <h1>el color empieza por g</h1>
+    {% endif %}
+    
+    {% if aves.color ends with 's' %}
+        <h1>el color acaba en s</h1>
+    {% endif %}
+    <hr>
+   {{ include('partials/funciones.html.twig') }}
+{% endblock %}
